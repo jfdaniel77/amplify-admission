@@ -1,0 +1,22 @@
+type Address @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  city: String
+  country: String!
+  personalID: ID! @index(name: "byPersonal")
+  address: String
+}
+
+type Contact @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  mobile: String
+  home: String
+}
+
+type Personal @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  email: String!
+  name: String!
+  addresses: [Address] @hasMany(indexName: "byPersonal", fields: ["id"])
+  contacts: Contact @hasOne
+  birthday: AWSDate!
+}

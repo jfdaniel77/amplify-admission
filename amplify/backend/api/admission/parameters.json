@@ -1,0 +1,6 @@
+{
+  "AppSyncApiName": "admission",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthModeLastUpdated": "2022-08-31T05:38:21.574Z"
+}
